@@ -1,30 +1,53 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
-import "./App.css";
 
-function App() {
-  return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>React Starter Project</h1>
-      <div className="card">
-        <p>
-          Edit <code>src/App.js</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  );
+import AlexaImage from './images/alexa.png';
+import CortanaImage from './images/cortana.png';
+import SiriImage from './images/Siri.png';
+import ProfileCard from "./ProfileCard";
+import 'bulma/css/bulma.css';
+
+function App(){
+    return (
+        <div>
+            <section className='hero is-primary'>
+                <div className='hero-body'>
+                    <p className='title'>Personal Assistants</p>
+                </div>
+            </section>
+    
+        <div className='container'>
+            <section className='section'>
+                <div className='columns'>
+                    <div className='column is-4'>
+                    <ProfileCard 
+                        title="Alexa" 
+                        handle="@alexa00"
+                        image={AlexaImage}
+                        description="Alexa was created by Amazon"/>
+                    </div>
+                    <div className='column is-4'>
+                    <ProfileCard 
+                        title="Cortana" 
+                        handle="@cortana32" 
+                        image={CortanaImage}
+                        description="Cortana was created by Miscosoft"
+                    />
+                    </div>
+                    <div className='column is-4'>  
+                        <ProfileCard 
+                            title="Siri" 
+                            handle="@siri" 
+                            image={SiriImage}
+                            description="Siri was created by Apple"
+                            />
+                    </div>
+                </div>
+            </section>
+        </div>
+           
+          
+          
+        </div>
+    )
 }
 
 export default App;
